@@ -7,7 +7,7 @@ abstract class Shape {
 
   Shape() {
     this(random(100, width-100), random(100, height-100), 0, 1, true,
-    color(random(1,255),random(1,255),random(1,255)));
+    color(random(1,255),random(0,255),random(0,255)));
   }
 
   Shape(float x, float y, float r, float s, boolean o, color c) {
@@ -27,7 +27,6 @@ abstract class Shape {
     drawShape();
     pop();
   }
-
   
   abstract void drawShape();
 
