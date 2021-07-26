@@ -1,3 +1,6 @@
+//este codigo ha sido escrito tomado como base 
+//TangramRosetta de Jean Pierre Charalambos Hernandez 
+//TANGRAM_POO_UN de Omar David Velasquez Pinto 
 Shape[] shapes;
 boolean drawGrid = true;
 boolean lock;
@@ -26,8 +29,6 @@ String res = "SPACE = Resetear el nivel";
 String libre = "L = Modo de crecion libre";
 String porcentaje = "Cuanto te falta";
 String rotar = "R  = Rotar";
-
-
 
 void reset(){
   shapes = new Shape[7];
@@ -70,18 +71,15 @@ void setup() {
   size(1100,600);
   textSize(20);
   reset();
- 
 }
-
 void drawGrid(float scale) {
   push();
   strokeWeight(1);
-  int i;
-  for (i=0; i<=width/scale; i++) {
+  for (int i=0; i<=width/scale; i++) {
     stroke(0, 0, 0, 20);
     line(i*scale, 0, i*scale, height);
   }
-  for (i=0; i<=height/scale; i++) {
+  for (int i=0; i<=height/scale; i++) {
     stroke(0, 0, 0, 20);
     line(0, i*scale, width, i*scale);
   }
@@ -106,9 +104,6 @@ void draw() {
   text(res,850,330,200,450);
   text(libre,850,390,200,450);
   text(rotar,850,450,200,450);
-  
-  
-  
   
   fill(250);//Tablero de juego
   rect(340,60,480,510);
@@ -210,16 +205,13 @@ void draw() {
     }else{
       lev++;
     }
-
   }
   text(porcentaje,155,500);//avance
   int guardar = (19447-2500);
   int contador2=contador*100;
-  int porc=(contador2/guardar);
-  
+  int porc=(contador2/guardar);  
   text(porc,155,530);
 }
-
 void keyPressed() {
   if (key == 'g' || key == 'G'){
     drawGrid = !drawGrid;
@@ -252,7 +244,6 @@ void keyPressed() {
   }
   }
 }
-
 void mousePressed(){ 
   C = get(mouseX,mouseY);
   for(int i = 0; i<7; i++){
@@ -267,10 +258,7 @@ void mousePressed(){
     } 
   }
   }
-
-
 }
-
 void mouseDragged(){
   for(int i=0;i<7;i++){
     if(C == shapes[i].hue){
@@ -279,7 +267,6 @@ void mouseDragged(){
     }
   }
 }
-
 void mouseReleased(){
   if(mouseButton == LEFT){
     lock = false;
